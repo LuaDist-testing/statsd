@@ -8,8 +8,8 @@ Installation
 ------------
 
 ```sh
-% wget https://raw.github.com/stvp/lua-statsd-client/master/statsd-2.0.0-1.rockspec
-% luarocks install luarocks install statsd-2.0.0-1.rockspec
+% wget https://raw.github.com/stvp/lua-statsd-client/master/rockspecs/statsd-2.0.0-1.rockspec
+% luarocks install statsd-2.0.0-1.rockspec
 ```
 
 Usage
@@ -26,13 +26,13 @@ local statsd = Statsd({
   namespace = "mysite.stats" -- default: none
 })
 
-statsd.gauge( "users", #my_users_table )
-statsd.counter( "events", 5 )
-statsd.increment( "events", 1 )
-statsd.decrement( "events", 3 )
-statsd.timer( "page_render", 105 )
-statsd.histogram( "page_render_time", 105 )
-statsd.meter( "page_load", 1 )
+statsd:gauge( "users", #my_users_table )
+statsd:counter( "events", 5 )
+statsd:increment( "events", 1 )
+statsd:decrement( "events", 3 )
+statsd:timer( "page_render", 105 )
+statsd:histogram( "page_render_time", 105 )
+statsd:meter( "page_load", 1 )
 ```
 
 Development
@@ -40,6 +40,6 @@ Development
 
 ```
 % luarocks install busted
-% busted statsd_test.lua
+% busted spec
 ```
 
