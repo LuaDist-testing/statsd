@@ -1,16 +1,16 @@
 -- This file was automatically generated for the LuaDist project.
 
 package = "statsd"
-version = "1.0.0-1"
+version = "2.0.0-1"
 -- LuaDist source
 source = {
-  tag = "1.0.0-1",
+  tag = "2.0.0-1",
   url = "git://github.com/LuaDist-testing/statsd.git"
 }
 -- Original source
 -- source = {
 --   url = "git://github.com/stvp/lua-statsd-client.git",
---   tag = "1.0.0"
+--   tag = "2.0.0"
 -- }
 description = {
   summary = "Statsd client.",

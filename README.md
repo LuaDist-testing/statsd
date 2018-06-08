@@ -8,18 +8,23 @@ Installation
 ------------
 
 ```sh
-% luarocks install statsd
+% wget https://raw.github.com/stvp/lua-statsd-client/master/statsd-2.0.0-1.rockspec
+% luarocks install luarocks install statsd-2.0.0-1.rockspec
 ```
 
 Usage
 -----
 
 ```lua
-local statsd = require "statsd"
+-- require constructor
+local Statsd = require "statsd"
 
-statsd.host = "stats.mysite.com" -- default: 127.0.0.1
-statsd.port = 8888 -- default: 8125
-statsd.namespace = "mysite.stats" -- default: none
+-- create statsd object, which will open up a persistent port
+local statsd = Statsd({
+  host = "stats.mysite.com" -- default: 127.0.0.1
+  port = 8888 -- default: 8125
+  namespace = "mysite.stats" -- default: none
+})
 
 statsd.gauge( "users", #my_users_table )
 statsd.counter( "events", 5 )
